@@ -1,0 +1,229 @@
+/**
+ * Copyright (c) 2018 Nathaniel Wroblewski
+ *
+ * I am making my contributions/submissions to this project solely in my
+ * personal capacity and am not conveying any rights to any intellectual
+ * property of any third parties.
+**/
+@font-face {
+  font-family: "lazer84";
+  src: url("//d9n2q0aon7p4b.cloudfront.net/fonts/lazer84.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bayshore";
+  src: url("//d9n2q0aon7p4b.cloudfront.net/fonts/Bayshore.ttf") format("truetype"),
+       url("//d9n2q0aon7p4b.cloudfront.net/fonts/Bayshore.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Light";
+  src: url("//d9n2q0aon7p4b.cloudfront.net/fonts/HelveticaNeueLight.ttf") format("truetype"),
+       url("//d9n2q0aon7p4b.cloudfront.net/fonts/HelveticaNeueLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes fade {
+  0% { opacity: 1 }
+  100% { opacity: 0.3 }
+}
+
+@keyframes shock {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+html {
+  font-size: 15px;
+}
+
+html, body {
+  height: 100%;
+  width:  100%;
+  padding: 0;
+  margin:  0;
+  background-color: #111;
+  color: #fff;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.container {
+  width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.title {
+  position: relative;
+  margin: 0 auto -30px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 4em;
+  font-family: 'lazer84', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-transform: skew(-5deg, -5deg);
+  background-image: -webkit-linear-gradient(#FDC42C 0%, #FB199E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(5px 5px 2px #002EC3);
+  z-index: 10;
+}
+
+.game {
+  position: relative;
+  height: 480px;
+  width: 640px;
+  padding: 0;
+  margin: 0;
+  border-radius: 30px;
+  border: 1px solid #FB199E;
+  box-shadow:
+    inset 0 0 10px #FB199E, inset 10px 0 50px #FB199E, inset -10px 0 50px #FB199E,
+          0 0 10px #FB199E,      -10px 0 50px #FB199E,        10px 0 50px #FB199E;
+}
+
+.title-screen {
+  cursor: pointer;
+}
+
+.game .text {
+  width: 100%;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  line-height: 1rem;
+  vertical-align: baseline;
+  font-size: 3.5em;
+  font-family: 'Bayshore', cursive;
+  text-align: center;
+  margin-top: 200px;
+  -webkit-filter: drop-shadow(2px 2px 3px #FB199E);
+  text-shadow: 0px 0px 3px #FB199E;
+}
+
+.controls {
+  color: #FB199E;
+  width: 180px;
+  margin: 0 auto;
+  font-family: 'Helvetica Neue Light', sans-serif;
+  font-size: 1em;
+  line-height: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+
+.controls tr td:first-child {
+  text-align: left;
+}
+
+.controls tr td:nth-child(n + 2) {
+  text-align: center;
+}
+
+.radio-container {
+  animation: fade 6s 1;
+  opacity: 0.3
+}
+
+.radio {
+  font-weight: 400;
+  margin-bottom: -30px;
+  font-size: 2.8em;
+  font-family: 'lazer84', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  background-image: -webkit-linear-gradient(#FB199E 0%, #FB199E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(0px 0px 0px #002EC3);
+}
+
+.now-playing {
+  width: 100%;
+  margin-top: 0px;
+  vertical-align: baseline;
+  font-size: 2.5rem;
+  font-family: 'Bayshore', cursive;
+  text-align: center;
+  font-style: italic;
+  text-shadow: 0px 0px 3px #FB199E;
+  -webkit-filter: drop-shadow(2px 2px 3px #FB199E);
+  color: #fff;
+}
+
+a:link, a:visited { color: inherit; }
+
+.canvas {
+  touch-action: manipulation;
+  height: 480px;
+  width: 640px;
+  border-radius: 30px;
+  border: 1px solid #FB199E;
+}
+
+img, audio {
+  display: none;
+}
+
+.crash {
+  opacity: 0;
+  background-color: #FB199E;
+  animation: shock 3s 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 482px;
+  width: 640px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #FB199E;
+  border-radius: 30px;
+}
+
+.health {
+  color: #FB199E;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  height: 30px;
+  width: 100px;
+  padding: 10px 0 0 20px;
+  margin: 0;
+  font-family: 'Helvetica Neue Light', sans-serif;
+}
+
+.heart {
+  margin-right: 5px;
+}
+
+.clock {
+  color: #FDC42C;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  right: 0;
+  font-size: 1.3em;
+  font-family: monospace;
+  height: 30px;
+  width: 500px;
+  padding: 10px 20px 0 0;
+  margin: 0;
+}
+
+.message {
+  margin-top: 25px;
+  font-size: 1em;
+  line-height: 1.3em;
+  font-family: 'Helvetica Neue Light', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 5px;
+  color: #FB199E;
+}
