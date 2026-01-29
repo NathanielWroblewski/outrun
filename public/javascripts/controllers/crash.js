@@ -9,7 +9,7 @@ import renderGameOver from '../views/game_over.js'
 
 class Crash extends Lose {
   render ({ element }) {
-    renderGameOver({ element, message: 'Totalled' })
+    renderGameOver({ element, message: 'Totaled' })
   }
 }
 
